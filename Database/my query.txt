@@ -1,0 +1,43 @@
+use Pharmacy_system2;
+select * from Drugs;
+select  DR_Type from Drugs;
+select Distinct DR_Type from Drugs; /*return only distinct (different) values.*/
+select count(Distinct DR_Type)from Drugs; /*number of different (distinct)*/
+select * from Drugs where Dr_id=1010;
+select * from Drugs where DR_Type='pills';
+select * from Drugs where DR_Type='Gel' OR DR_Type='pills' ;
+select * from Drugs where NOT DR_Type='pills' ;
+select * from Drugs where DR_Type='Gel' AND (factory_price = 35 OR factory_price = 24);
+select * from Drugs where NOT DR_Type='Gel' AND NOT DR_Type='pills' ;
+select * from Drugs Order by Dr_id ASC , DR_Type DESC;
+select * from pharmacist;
+INSERT INTO pharmacist VALUES (122,'Rana wakad','rana','123456','0111000');
+select * from Drugs where DR_Type IS NOT NULL;
+UPDATE pharmacist SET Name='Kiri Adel',ph_user ='Kiri',ph_password= '123456'
+WHERE id=468915;
+DELETE from pharmacist where Name = 'rr';
+SELECT TOP 3 * FROM Drugs;
+SELECT MIN(sales_price) from Drugs;
+SELECT AVG(sales_price) from Drugs;
+SELECT SUM(Total_price) from Bill;
+SELECT COUNT(id) FROM pharmacist;
+select * from pharmacist WHERE name LIKE 'r%'; /* Start with "r" */
+select * from pharmacist WHERE name LIKE '_a%'; /* have "a" in the second position */
+select * from pharmacist WHERE name LIKE 's%y'; /* starts with "s" and ends with "y"*/
+select * from Drugs where DR_Type IN ('pills','gel');
+select * from Drugs where sales_price between 20 And 30;
+
+use Pharmacy_system2;
+Select * from Drugs
+UPDATE  Drugs
+set Dr_Name = 'asd2'
+where Dr_id='123'
+select MIn (sales_price)  
+from Drugs
+select max (sales_price)  
+from Drugs
+Select Top 3 * from Drugs
+where sales_price>20
+Select *from Drugs
+where DR_Type Like 'pi%'
+Select * from Drugs AS Candy
